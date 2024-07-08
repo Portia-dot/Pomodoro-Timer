@@ -10,6 +10,7 @@
 		6E33A9FF2C31B1530066EA1B /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33A9FE2C31B1530066EA1B /* Time.swift */; };
 		6E33AA022C31B1D90066EA1B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33AA012C31B1D90066EA1B /* Home.swift */; };
 		6E33AA032C3217870066EA1B /* FlipingClockEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33A9FB2C3191400066EA1B /* FlipingClockEffect.swift */; };
+		6E33AA052C3277930066EA1B /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33AA042C3277930066EA1B /* TimePicker.swift */; };
 		6EF60AA62C311CBA0087B0FB /* Pomodoro_TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF60AA52C311CBA0087B0FB /* Pomodoro_TimerApp.swift */; };
 		6EF60AA82C311CBA0087B0FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF60AA72C311CBA0087B0FB /* ContentView.swift */; };
 		6EF60AAA2C311CBC0087B0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF60AA92C311CBC0087B0FB /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		6E33A9FB2C3191400066EA1B /* FlipingClockEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipingClockEffect.swift; sourceTree = "<group>"; };
 		6E33A9FE2C31B1530066EA1B /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		6E33AA012C31B1D90066EA1B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		6E33AA042C3277930066EA1B /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		6EF60AA22C311CBA0087B0FB /* Pomodoro Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF60AA52C311CBA0087B0FB /* Pomodoro_TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro_TimerApp.swift; sourceTree = "<group>"; };
 		6EF60AA72C311CBA0087B0FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			children = (
 				6E33A9FB2C3191400066EA1B /* FlipingClockEffect.swift */,
 				6E33AA012C31B1D90066EA1B /* Home.swift */,
+				6E33AA042C3277930066EA1B /* TimePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E33AA052C3277930066EA1B /* TimePicker.swift in Sources */,
 				6E33A9FF2C31B1530066EA1B /* Time.swift in Sources */,
 				6E33AA022C31B1D90066EA1B /* Home.swift in Sources */,
 				6EF60AA82C311CBA0087B0FB /* ContentView.swift in Sources */,

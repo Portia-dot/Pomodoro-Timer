@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FlipingClockEffect: View {
-    @Binding  var value: Int
+struct FlipClockTextEffect: View {
+    @Binding var value: Int
     
     var size: CGSize
     var fontSize: CGFloat
@@ -23,7 +23,7 @@ struct FlipingClockEffect: View {
     var body: some View {
         let halfHeight = size.height * 0.5
         
-        ZStack{
+        ZStack {
             UnevenRoundedRectangle(topLeadingRadius: cornerRadius, bottomLeadingRadius: 0, bottomTrailingRadius: 0, topTrailingRadius: cornerRadius)
                 .fill(background.shadow(.inner(radius: 1)))
                 .frame(height: halfHeight)
@@ -39,7 +39,7 @@ struct FlipingClockEffect: View {
                 .fill(background.shadow(.inner(radius: 1)))
                 .frame(height: halfHeight)
                 .modifier(
-                    RotationModifider(
+                    RotationModifier(
                         rotation: rotation,
                         currentValue: currentValue,
                         nextValue: nextValue,
@@ -94,51 +94,56 @@ struct FlipingClockEffect: View {
     
     @ViewBuilder
     func TextView(_ value: Int) -> some View {
-        Text("\(value)")
+        Text(value.inTimeFormat)
             .font(.system(size: fontSize).bold())
             .foregroundStyle(foreground)
             .lineLimit(1)
     }
 }
 
-fileprivate struct RotationModifider: ViewModifier, Animatable {
+fileprivate struct RotationModifier: ViewModifier, Animatable {
     var rotation: CGFloat
     var currentValue: Int
     var nextValue: Int
     var fontSize: CGFloat
     var foreground: Color
     var size: CGSize
-    
     var animatableData: CGFloat {
-        get {rotation}
-        set {rotation = newValue}
+        get { rotation }
+        set { rotation = newValue }
     }
+    
     func body(content: Content) -> some View {
         content
-            .overlay(alignment: .top){
+            .overlay(alignment: .top) {
                 Group {
                     if -rotation > 90 {
-                        Text("\(nextValue)")
+                        Text(nextValue.inTimeFormat)
                             .font(.system(size: fontSize).bold())
                             .foregroundStyle(foreground)
                             .scaleEffect(x: 1, y: -1)
                             .transition(.identity)
                             .lineLimit(1)
-                    }else{
-                        Text("\(currentValue)")
+                    } else {
+                        Text(currentValue.inTimeFormat)
                             .font(.system(size: fontSize).bold())
                             .foregroundStyle(foreground)
                             .transition(.identity)
                             .lineLimit(1)
                     }
                 }
+                .frame(width: size.width, height: size.height)
+                .drawingGroup()
             }
-            .frame(width: size.width, height: size.height)
-            .drawingGroup()
-        
     }
 }
 
 #Preview {
     ContentView()
+}
+
+extension Int {
+    var inTimeFormat: String {
+        return self < 10 ? "0\(self)" : "\(self)"
+    }
 }

@@ -8,6 +8,6 @@
 import SwiftUI
 struct Time: Hashable {
     var hour: Int = 0
-    var miunte: Int = 0
+    var minutes: Int = 0
     var seconds: Int = 0
 }
