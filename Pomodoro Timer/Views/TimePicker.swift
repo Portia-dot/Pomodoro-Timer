@@ -16,9 +16,9 @@ struct TimePicker: View {
     
     var body: some View {
         HStack(spacing: 0){
-            CustomView("hours", 0...24, $hour)
-            CustomView("mins", 0...60, $hour)
-            CustomView("secs", 0...60, $hour)
+            CustomView("hours", 0...23, $hour)
+            CustomView("mins", 0...60, $minutes)
+            CustomView("secs", 0...60, $seconds)
         }
         .offset(x: -25)
         .background{
@@ -54,7 +54,9 @@ struct PickerViewWithoutIndicator< Content: View, Selection: Hashable> : View {
     var body: some View{
         Picker("", selection: $selection){
             if !isHidden {
-                //Logic
+                RemovePickerIndicator{
+                    isHidden = true
+                }
             }else {
                 content
             }
